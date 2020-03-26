@@ -15,6 +15,7 @@ function Accounts () {
   const accessToken = cookies.token.access_token
 
   const handleError = (error, message) => setError(<Error error={error} message={message} />)
+  const handleSelectedAccount = account => history.push({ pathname: '/form', state: { account: account } })
   const requestAccounts = () => {
     axios({
       method: 'get',
@@ -34,7 +35,7 @@ function Accounts () {
   }, [])
 
   const accountsList = accounts.map(account =>
-    <div className="account" key={account.accountNumber} onClick={() => history.push({ pathname: '/', state: { account: account } })} >
+    <div className="account" key={account.accountNumber} onClick={() => handleSelectedAccount(account)} >
       <span>{account.name}</span>
       <span className="accountNumber">{account.accountNumber}</span>
       <span className="accountBalance">{account.balance} {account.currencyCode}</span>

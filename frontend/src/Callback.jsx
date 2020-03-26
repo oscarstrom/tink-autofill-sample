@@ -51,7 +51,7 @@ function Callback (props) {
     } else if (queryStringParameters.error) {
       handleError(queryStringParameters.error, queryStringParameters.message)
     } else {
-      history.push('/')
+      history.push('/form')
     }
   }, [])
   return <div>

@@ -1,15 +1,23 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from "react-router-dom"
 import './Style.css'
 
 function Form (props) {
   const [formValues, setFormValues] = useState({ holderName: '', accountNumber: '' })
   const [autofilled, setAutofilled] = useState(false)
   const { register, handleSubmit } = useForm()
-  const onSubmit = data => { console.log(data) }
+  const history = useHistory()
   const redirectedProps = props.location.state
   const tinkAutofillURL = 'https://link.tink.com/1.0/authorize/?client_id=74ab7a0de1704bdf8f072cfdf3096f40&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback&scope=accounts:read,identity:read&market=SE&locale=en_US'
+  const onSubmit = () => {
+    if (autofilled) {
+      history.push('./submitted')
+    } else {
+      window.location.href = tinkAutofillURL
+    }
+  }
 
   useEffect(() => {
     if (redirectedProps && redirectedProps.account) {
@@ -27,7 +35,7 @@ function Form (props) {
       <input name="account_number" className="formInput" defaultValue = {formValues.accountNumber} ref={register} />
       {autofilled
         ? <input className="submitButton" type="submit" value="Submit"/>
-        : <input className="submitButton" type="button" value="Or autofill with Tink" onClick={() => window.location.href = tinkAutofillURL } />}
+        : <input className="submitButton" type="submit" value="Or autofill with Tink" />}
     </form>
   </div>
 }
