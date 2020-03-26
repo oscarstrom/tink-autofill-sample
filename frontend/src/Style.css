@@ -20,7 +20,7 @@
     font-size: 1rem;
 }
 
-.formLabel{
+.subheading{
     color: rgb(128, 128, 128);
     margin: 0px 6px 14px;
 }
@@ -43,6 +43,8 @@
 
 .submitButton:hover{
     background-color: rgb(45, 93, 103);
+    text-decoration: none;
+    color: white;
 }
 
 .accountWrapper{
@@ -50,7 +52,7 @@
     overflow: scroll;
 }
 
-.description{
+.heading{
     font-size: 1.2rem;
     margin: 0px 6px 16px;
 }

@@ -4,28 +4,30 @@ import { useCookies } from 'react-cookie'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Spinner from 'react-bootstrap/Spinner'
+import Error from './Error'
 import './Style.css'
 
 function Accounts () {
   const [accounts, setAccounts] = useState([])
+  const [error, setError] = useState(null)
   const [cookies] = useCookies(['token'])
   const history = useHistory()
+  const accessToken = cookies.token.access_token
+
+  const handleError = (error, message) => setError(<Error error={error} message={message} />)
 
   useEffect(() => {
-    if (cookies.token) {
-      const accessToken = cookies.token.access_token
-      axios({
-        method: 'get',
-        url: 'http://localhost:8080/accounts',
-        params: {
-          access_token: accessToken
-        }
-      }).then(resp => {
-        setAccounts(resp.data.accounts)
-      })
-    } else {
-      history.push('/')
-    }
+    axios({
+      method: 'get',
+      url: 'http://localhost:8080/accounts',
+      params: {
+        accessToken
+      }
+    }).then(resp => {
+      setAccounts(resp.data.accounts)
+    }).catch(
+      error => handleError(error.message, error.message)
+    )
   }, [])
 
   const accountsList = accounts.map(account =>
@@ -35,8 +37,11 @@ function Accounts () {
       <span className="accountBalance">{account.balance} {account.currencyCode}</span>
     </div>)
   return <div className="accountWrapper">
-    <p className="description" >Select account to use</p>
-    {accounts.length > 1 ? accountsList : <Spinner animation="border" variant="info" />}
+    {error ? <div>{error}</div>
+      : <div>
+        <p className="heading" >Select account to use</p>
+        {accounts.length > 1 ? accountsList : <Spinner animation="border" variant="info" />}
+      </div>}
   </div>
 }
 
