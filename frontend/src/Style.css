@@ -1,0 +1,79 @@
+.outerDiv{
+    margin-top: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 80vh;
+    width: 400px;
+    padding: 52px 48px 44px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
+    border-radius: 0.5rem;
+}
+
+.formInput{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: none;
+    box-shadow: 0px 1px 4px 0 #DCE2E3;
+    margin: 0px 6px 14px;
+    font-size: 1rem;
+}
+
+.formLabel{
+    color: rgb(128, 128, 128);
+    margin: 0px 6px 14px;
+}
+
+.submitButton{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    padding: 14px 16px;
+    margin: 0px 6px 14px;
+    color: white;
+    background-color: rgb(66, 119, 131);
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.08);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover{
+    background-color: rgb(45, 93, 103);
+}
+
+.accountWrapper{
+    height: 100%;
+    overflow: scroll;
+}
+
+.description{
+    font-size: 1.2rem;
+    margin: 0px 6px 16px;
+}
+
+.account{
+    position: relative;
+    height: 80px;
+    margin: 0px 6px 14px;
+    padding: 8px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1px 4px 0 #DCE2E3;
+    cursor: pointer;
+}
+
+.accountNumber{
+    position: absolute;
+    color: rgb(128, 128, 128);
+    bottom: 8px;
+    left: 8px;
+}
+
+.accountBalance{
+    position: absolute;
+    top: 8px;
+    right: 8px; 
+}
