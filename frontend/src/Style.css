@@ -18,11 +18,18 @@
     box-shadow: 0px 1px 4px 0 #DCE2E3;
     margin: 0px 6px 14px;
     font-size: 1rem;
+    transition: box-shadow 0.1s;
+}
+
+.formInput:hover{
+    box-shadow: 0px 1px 4px 0 rgb(165, 179, 179);
+
 }
 
 .subheading{
     color: rgb(128, 128, 128);
     margin: 0px 6px 14px;
+    cursor: default
 }
 
 .submitButton{
@@ -55,6 +62,7 @@
 .heading{
     font-size: 1.2rem;
     margin: 0px 6px 16px;
+    cursor: default
 }
 
 .account{
@@ -65,6 +73,13 @@
     border-radius: 0.5rem;
     box-shadow: 0px 1px 4px 0 #DCE2E3;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.account:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 1px 4px 0 rgb(165, 179, 179);
 }
 
 .accountNumber{

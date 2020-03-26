@@ -15,8 +15,7 @@ function Accounts () {
   const accessToken = cookies.token.access_token
 
   const handleError = (error, message) => setError(<Error error={error} message={message} />)
-
-  useEffect(() => {
+  const requestAccounts = () => {
     axios({
       method: 'get',
       url: 'http://localhost:8080/accounts',
@@ -28,6 +27,10 @@ function Accounts () {
     }).catch(
       error => handleError(error.message, error.message)
     )
+  }
+
+  useEffect(() => {
+    requestAccounts()
   }, [])
 
   const accountsList = accounts.map(account =>
