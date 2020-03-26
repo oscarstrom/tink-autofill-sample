@@ -44,7 +44,7 @@ function Accounts () {
     {error ? <div>{error}</div>
       : <div>
         <p className="heading" >Select account to use</p>
-        {accounts.length > 1 ? accountsList : <Spinner animation="border" variant="info" />}
+        {accounts.length > 1 ? accountsList : <div className="spinner"><Spinner animation="border" variant="info" /></div>}
       </div>}
   </div>
 }

@@ -60,7 +60,7 @@ function Callback (props) {
         {error}
       </div>
       : <div>
-        <p className="heading"> Authenticating </p> <Spinner animation="border" variant="info"/>
+        <div className="spinner"><Spinner animation="border" variant="info" /></div>
       </div>}
   </div>
 }

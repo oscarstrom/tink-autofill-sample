@@ -19,6 +19,11 @@
     margin: 0px 6px 14px;
     font-size: 1rem;
     transition: box-shadow 0.1s;
+    opacity: 0;
+    -webkit-animation: fade 0.5s forwards;
+    animation: fade 0.5s forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.3s;
 }
 
 .formInput:hover{
@@ -29,7 +34,13 @@
 .subheading{
     color: rgb(128, 128, 128);
     margin: 0px 6px 14px;
-    cursor: default
+    cursor: default;
+    opacity: 0;
+    -webkit-animation: fade 0.5s forwards;
+    animation: fade 0.5s forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.3s;
+
 }
 
 .submitButton{
@@ -45,7 +56,13 @@
     box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.08);
     font-size: 1rem;
     cursor: pointer;
+    opacity: 0;
     transition: background-color 0.3s;
+    -webkit-animation: fade 0.5s forwards;
+    animation: fade 0.8s forwards;
+    animation-timing-function: ease;
+    animation-delay: 0.3s;
+
 }
 
 .submitButton:hover{
@@ -62,7 +79,18 @@
 .heading{
     font-size: 1.2rem;
     margin: 0px 6px 16px;
-    cursor: default
+    cursor: default;
+    opacity: 0;
+    -webkit-animation: fade 1s forwards;
+    animation: fade 1s forwards;
+    animation-timing-function: ease;
+}
+
+.spinner{
+    opacity: 0;
+    -webkit-animation: fade 1s forwards;
+    animation: fade 1s forwards;
+    animation-timing-function: ease;
 }
 
 .account{
@@ -75,6 +103,10 @@
     cursor: pointer;
     transform: scale(1);
     transition: transform 0.1s, box-shadow 0.1s;
+    opacity: 0;
+    -webkit-animation: fade 0.5s forwards;
+    animation: fade 1s forwards;
+    animation-timing-function: ease;
 }
 
 .account:hover{
@@ -94,3 +126,8 @@
     top: 8px;
     right: 8px; 
 }
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
