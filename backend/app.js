@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const fetch = require('node-fetch')
@@ -7,8 +8,8 @@ const port = 8080
 const url = 'https://api.tink.com/api/v1'
 var data = {
   code: null,
-  client_id: '74ab7a0de1704bdf8f072cfdf3096f40',
-  client_secret: 'c48b23e40db14a7eaeb8b511f0c00866',
+  client_id: process.env.CLIENT_ID,
+  client_secret: process.env.CLIENT_SECRET,
   grant_type: 'authorization_code'
 }
 
@@ -29,6 +30,10 @@ app.get('/accounts', (req, res) => {
     .then((json) => {
       res.send(json)
     })
+})
+
+app.get('/url', (req, res) => {
+  res.send(process.env.TINK_URL)
 })
 
 app.post('/authorize', (req, res) => {

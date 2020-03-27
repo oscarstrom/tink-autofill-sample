@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from "react-router-dom"
+import axios from 'axios'
 import './Style.css'
 
 function Form (props) {
@@ -10,12 +11,21 @@ function Form (props) {
   const { register, handleSubmit } = useForm()
   const history = useHistory()
   const redirectedProps = props.location.state
-  const tinkAutofillURL = 'https://link.tink.com/1.0/authorize/?client_id=74ab7a0de1704bdf8f072cfdf3096f40&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback&scope=accounts:read,identity:read&market=SE&locale=en_US'
+
+  const redirectURL = () => {
+    axios({
+      method: 'get',
+      url: 'http://localhost:8080/url'
+    }).then(resp => {
+      window.location.href = resp.data
+    })
+  }
+
   const onSubmit = () => {
     if (autofilled) {
       history.push('./submitted')
     } else {
-      window.location.href = tinkAutofillURL
+      redirectURL()
     }
   }
 
