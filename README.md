@@ -25,5 +25,6 @@ TINK_URL= YOUR TINK LINK URL
 
 **Initialise and run the sample code**
 1. CD to the root folder
-2. Run npm start
+2. run npm install
+3. Run npm start
 
