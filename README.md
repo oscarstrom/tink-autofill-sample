@@ -8,15 +8,22 @@ The sample code has two main parts:
 ## Setup
 **Requirements**
 
+To run the sample code you need to create a [Tink developer account](https://console.tink.com/signup) and connect with [Tink Link](https://docs.tink.com/resources/getting-started/connect-tink-link)
+
 To run the commands used in this sample code you need to install [Node.js](https://nodejs.org/en/)
 
-**Initialise and run the backend**
+**Set environment variables**
 1. CD into the backend folder
-2. Run npm install
-3. Run Node app.js
+2. create a .env file
+3. in the .env file enter: 
 
-**Initialise and run the frontend**
-1. CD into the frontend folder
-2. Run npm install
-3. Run npm start
+CLIENT_ID= YOUR TINK APP ID
+
+CLIENT_SECRET= YOUR TINK APP SECRET
+
+TINK_URL= YOUR TINK LINK URL
+
+**Initialise and run the sample code**
+1. CD to the root folder
+2. Run npm start
 
