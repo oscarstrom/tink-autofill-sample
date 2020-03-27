@@ -34,8 +34,8 @@ function Form (props) {
       <p className="subheading">Account number</p>
       <input name="account_number" className="formInput" defaultValue = {formValues.accountNumber} ref={register} />
       {autofilled
-        ? <input className="submitButton" type="submit" value="Submit"/>
-        : <input className="submitButton" type="submit" value="Or autofill with Tink" />}
+        ? <input className="button" type="submit" value="Submit"/>
+        : <input className="button" type="submit" value="Or autofill with Tink" />}
     </form>
   </div>
 }

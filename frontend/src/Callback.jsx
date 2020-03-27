@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
@@ -8,17 +7,13 @@ import Error from './Error'
 import qs from 'querystring'
 import './Style.css'
 
-function getQueryStringParameters (querystring) {
-  var queryStringParameters = qs.parse(querystring.slice(1))
-  return queryStringParameters
-}
-
 function Callback (props) {
   const [cookie, setCookie] = useCookies(['token'])
   const [error, setError] = useState(null)
   const history = useHistory()
   const queryString = props.location.search
 
+  const getQueryStringParameters = querystring => qs.parse(querystring.slice(1))
   const handleError = (error, message) => setError(<Error error={error} message={message} />)
   const requestToken = authorizationCode => {
     axios({

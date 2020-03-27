@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'

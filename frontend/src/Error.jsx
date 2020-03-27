@@ -5,7 +5,7 @@ function Error (props) {
   return <div>
     <p className="heading" >Error: {props.error}</p>
     <p className="subheading">Message: {props.message}</p>
-    <a className="submitButton" href="/form">Try again</a>
+    <a className="button" href="/form">Try again</a>
   </div>
 }
 

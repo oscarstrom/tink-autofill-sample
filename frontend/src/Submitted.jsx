@@ -15,7 +15,7 @@ function Submitted () {
   return <div>
     <p className="heading" >Thats it!</p>
     <p className="subheading">Thank you for trying this autofill demonstration</p>
-    <button className="submitButton" onClick={() => resetDemonstration()}>Try again</button>
+    <button className="button" onClick={() => resetDemonstration()}>Try again</button>
   </div>
 }
 
