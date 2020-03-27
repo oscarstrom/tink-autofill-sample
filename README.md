@@ -3,7 +3,7 @@ This is a sample code demonstrating how [Tink’s APIs](https://docs.tink.com/re
 
 The sample code has two main parts:
 - Frontend — uses **React.js** and demonstrates the client side solution of the sample code
-- Backend - uses **Node.js** and demonstrates the server side solution of the sample code
+- Backend — uses **Node.js** and demonstrates the server side solution of the sample code
 
 ## Setup
 **Requirements**
