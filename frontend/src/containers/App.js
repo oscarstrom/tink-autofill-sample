@@ -7,7 +7,7 @@ import Startpage from './Startpage'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './Style.css'
+import '../common/Style.css'
 
 function App (props) {
   const [cookies] = useCookies(['token'])

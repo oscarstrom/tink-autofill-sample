@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
-import './Style.css'
+import '../common/Style.css'
 
 function Form (props) {
   const [formValues, setFormValues] = useState({ holderName: '', accountNumber: '' })
@@ -40,9 +40,9 @@ function Form (props) {
     <p className="heading" >Enter the following information to complete your request</p>
     <form onSubmit={handleSubmit(onSubmit)}>
       <p className="subheading">Name</p>
-      <input name="name" className="formInput" defaultValue = {formValues.holderName} ref={register} />
+      <input name="name" className="formInput" defaultValue={formValues.holderName} ref={register} />
       <p className="subheading">Account number</p>
-      <input name="account_number" className="formInput" defaultValue = {formValues.accountNumber} ref={register} />
+      <input name="account_number" className="formInput" defaultValue={formValues.accountNumber} ref={register} />
       {autofilled
         ? <input className="button" type="submit" value="Submit"/>
         : <input className="button" type="submit" value="Or autofill with Tink" />}

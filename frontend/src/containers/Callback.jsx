@@ -3,9 +3,9 @@ import { useCookies } from 'react-cookie'
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import Spinner from 'react-bootstrap/Spinner'
-import Error from './Error'
+import Error from '../common/Error'
 import qs from 'querystring'
-import './Style.css'
+import '../common/Style.css'
 
 function Callback (props) {
   const [cookie, setCookie] = useCookies(['token'])
@@ -41,7 +41,7 @@ function Callback (props) {
     var queryStringParameters = getQueryStringParameters(queryString)
 
     if (queryStringParameters.code) {
-      var authorizationCode = queryStringParameters.code
+      const authorizationCode = queryStringParameters.code
       requestToken(authorizationCode)
     } else if (queryStringParameters.error) {
       handleError(queryStringParameters.error, queryStringParameters.message)

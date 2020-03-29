@@ -1,5 +1,5 @@
 import React from 'react'
-import './Style.css'
+import '../common/Style.css'
 import { useCookies } from 'react-cookie'
 import { useHistory } from "react-router-dom"
 

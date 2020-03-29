@@ -1,5 +1,5 @@
 import React from 'react'
-import './Style.css'
+import '../common/Style.css'
 
 function Startpage () {
   return <div>

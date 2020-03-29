@@ -3,8 +3,8 @@ import { useCookies } from 'react-cookie'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Spinner from 'react-bootstrap/Spinner'
-import Error from './Error'
-import './Style.css'
+import Error from '../common/Error'
+import '../common/Style.css'
 
 function Accounts () {
   const [accounts, setAccounts] = useState([])
