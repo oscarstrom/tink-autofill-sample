@@ -14,7 +14,7 @@ To run the commands used in this sample code you need to install [Node.js](https
 
 **Set environment variables**
 1. CD into the backend folder
-2. create a .env file
+2. Open the .env file
 3. in the .env file enter: 
 
 CLIENT_ID= YOUR TINK APP ID
