@@ -17,11 +17,11 @@ To run the commands used in this sample code you need to install [Node.js](https
 2. Open the .env file
 3. in the .env file enter: 
 
-CLIENT_ID= YOUR TINK APP ID
-
-CLIENT_SECRET= YOUR TINK APP SECRET
-
-TINK_URL= YOUR TINK LINK URL
+```
+CLIENT_ID= Your Tink app Id
+CLIENT_SECRET= Your Tink app secret
+TINK_URL= Your Tink link URL
+```
 
 **Initialise and run the sample code**
 1. CD to the root folder
